@@ -1,0 +1,60 @@
+/*
+Elias Brahimi Program 4
+*/
+
+public class Truck extends Vehicle{
+  private String description;
+  private int mpg; 
+  private String vin; 
+  private Reservation resv;
+  private int loadCapacity;
+
+  public Truck(String description, int mpg, int loadCapacity, String vin){
+    super(description, mpg, vin);
+    this.loadCapacity= loadCapacity;
+  }
+  public String getDescription() {
+    return description;
+  }
+  
+  public int getMpg() {
+    return mpg;
+  }
+  
+  public String getVIN() {
+    return vin;
+  }
+  public int getLoadCapacity(){
+    return loadCapacity;
+  }
+  public Reservation getReservation() {
+    return resv;
+  }
+  public boolean isReserved() {
+    return resv != null; 
+  }
+  public void reserve(Reservation r) {
+    resv = r;
+  }
+  public void cancelReservation() {
+
+    try
+      {
+        if(resv==null){
+          throw new UnreservedVehicleException();
+        }
+        else{
+          resv=null;
+        }
+      }
+        catch (Exception e){
+        System.out.println(e);
+        }
+  } 
+  public String toString(){
+    return "Car: " + description + ", mpg: "+mpg+" Load Capacity: " + loadCapacity+ " VIN: " + vin;
+  }
+  
+}
+
+  
