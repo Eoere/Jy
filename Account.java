@@ -1,5 +1,5 @@
 /*
-Elias Brahimi Program 4
+//Justin Omekwe
 */
 
 public class Account{
